@@ -7,7 +7,7 @@ from analyzer_model import ContentTrendsAnalyzer
 #FastAPI
 app = FastAPI(
     title="Content Trends API",
-    description="API متقدمة لتحليل اتجاهات المحتوى وتوليد التوصيات",
+    description="API",
     version="1.0.0"
 )
 
@@ -35,9 +35,7 @@ class AnalysisRequest(BaseModel):
 
 @app.post("/analyze_trends", tags=["Analysis"])
 def analyze_content_trends(request: AnalysisRequest):
-    """
-    تلقي بيانات المحتوى وإرجاع تقرير تحليل الاتجاهات والتوصيات.
-    """
+   
     if not request.data:
         raise HTTPException(status_code=400, detail="يجب توفير بيانات محتوى للتحليل.")
 
