@@ -26,7 +26,6 @@ class ContentItem(BaseModel):
 
 
 class AnalysisRequest(BaseModel):
-    """نموذج طلب التحليل الذي يحتوي على قائمة بـ ContentItem"""
     data: List[ContentItem] = Field(..., description="قائمة بالمنشورات المراد تحليلها.")
 
 
